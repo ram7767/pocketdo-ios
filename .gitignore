@@ -1,0 +1,30 @@
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+xcuserdata/
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcarchive
+.build/
+
+# CocoaPods
+Pods/
+*.xcworkspace
+
+# SPM
+.swiftpm/
+Package.resolved
+
+# Secrets
+GoogleService-Info.plist
+*.env
+Secrets.swift
+
+# macOS
+.DS_Store
+*.swp
