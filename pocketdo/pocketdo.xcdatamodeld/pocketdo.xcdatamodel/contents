@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
+
+    <!-- ═══════════════════════════════════════
+         TASK ENTITY
+    ═══════════════════════════════════════ -->
+    <entity name="TaskEntity" representedClassName="TaskEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id"                  attributeType="String"/>
+        <attribute name="title"               attributeType="String"/>
+        <attribute name="taskDescription"     optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="priorityRaw"         attributeType="String" defaultValueString="Medium"/>
+        <attribute name="statusRaw"           attributeType="String" defaultValueString="Pending"/>
+        <attribute name="deadline"            optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdAt"           attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt"           attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="completedAt"         optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isSynced"            attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <!-- Many-to-many: TaskEntity ↔ TagEntity -->
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TagEntity" inverseName="tasks" inverseEntity="TagEntity"/>
+        <!-- One-to-many: TaskEntity → AttachmentEntity -->
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AttachmentEntity" inverseName="task" inverseEntity="AttachmentEntity"/>
+    </entity>
+
+    <!-- ═══════════════════════════════════════
+         TAG ENTITY
+    ═══════════════════════════════════════ -->
+    <entity name="TagEntity" representedClassName="TagEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id"        attributeType="String"/>
+        <attribute name="name"      attributeType="String"/>
+        <attribute name="colorHex"  attributeType="String" defaultValueString="#3525CD"/>
+        <!-- Many-to-many inverse: TagEntity ↔ TaskEntity -->
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="tags" inverseEntity="TaskEntity"/>
+    </entity>
+
+    <!-- ═══════════════════════════════════════
+         ATTACHMENT ENTITY
+    ═══════════════════════════════════════ -->
+    <entity name="AttachmentEntity" representedClassName="AttachmentEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id"         attributeType="String"/>
+        <attribute name="fileName"   attributeType="String"/>
+        <attribute name="fileURL"    attributeType="String"/>
+        <attribute name="fileType"   attributeType="String" defaultValueString="file"/>
+        <attribute name="uploadedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <!-- Many-to-one: AttachmentEntity → TaskEntity -->
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="attachments" inverseEntity="TaskEntity"/>
+    </entity>
+
+    <elements>
+        <element name="TaskEntity"       positionX="-200" positionY="-100" width="180" height="254"/>
+        <element name="TagEntity"        positionX="80"   positionY="-100" width="160" height="104"/>
+        <element name="AttachmentEntity" positionX="-200" positionY="220"  width="180" height="134"/>
+    </elements>
+</model>
