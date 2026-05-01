@@ -18,19 +18,22 @@
 ## 📸 Screenshots
 
 ### Login & Authentication
+
 <div align="center">
 <img src="screenshots/login.png" alt="Login Screen" width="250"/>
 <img src="screenshots/signup.png" alt="Signup Screen" width="250"/>
 </div>
 
 ### Dashboard & Tasks
+
 <div align="center">
 <img src="screenshots/dashboard.png" alt="Dashboard" width="250"/>
 <img src="screenshots/task-list.png" alt="Task List" width="250"/>
-<img src="screenshots/add-task.png" alt="Add Task" width="250"/>
+<img src="screenshots/search.png" alt="Add Task" width="250"/>
 </div>
 
 ### Settings & Premium
+
 <div align="center">
 <img src="screenshots/settings.png" alt="Settings" width="250"/>
 <img src="screenshots/premium.png" alt="Premium Features" width="250"/>
@@ -40,17 +43,17 @@
 
 ## ✨ Features
 
-| Feature | Status |
-|---------|--------|
-| 🔐 User Authentication | ✅ |
-| 📦 Offline-First with CoreData | ✅ |
-| 📝 Task Management | ✅ |
-| 🏷️ Tags & Categories | ✅ |
-| 🔍 Search & Filter | ✅ |
-| 🌙 Dark Mode | ✅ |
-| ☁️ Cloud Sync (Premium) | 🚧 |
-| 🎨 Clean SwiftUI Interface | ✅ |
-| 🧪 Unit Tests | ✅ |
+| Feature                        | Status |
+| ------------------------------ | ------ |
+| 🔐 User Authentication         | ✅     |
+| 📦 Offline-First with CoreData | ✅     |
+| 📝 Task Management             | ✅     |
+| 🏷️ Tags & Categories           | ✅     |
+| 🔍 Search & Filter             | ✅     |
+| 🌙 Dark Mode                   | ✅     |
+| ☁️ Cloud Sync (Premium)        | 🚧     |
+| 🎨 Clean SwiftUI Interface     | ✅     |
+| 🧪 Unit Tests                  | ✅     |
 
 ---
 
@@ -73,15 +76,15 @@ Presentation Layer   →   Domain Layer   →   Data Layer
 
 ## 🛠️ Tech Stack
 
-| Category | Technology |
-|----------|-----------|
-| Language | Swift 5.9+ |
-| UI Framework | SwiftUI |
-| Reactive | Combine |
-| Database | CoreData (Local-first) |
-| Architecture | Clean Architecture |
+| Category             | Technology                   |
+| -------------------- | ---------------------------- |
+| Language             | Swift 5.9+                   |
+| UI Framework         | SwiftUI                      |
+| Reactive             | Combine                      |
+| Database             | CoreData (Local-first)       |
+| Architecture         | Clean Architecture           |
 | Dependency Injection | Manual (DependencyContainer) |
-| Testing | XCTest |
+| Testing              | XCTest                       |
 
 ---
 
